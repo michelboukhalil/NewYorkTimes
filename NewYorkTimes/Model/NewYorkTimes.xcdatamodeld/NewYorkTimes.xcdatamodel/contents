@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AllMedia" representedClassName="AllMedia" syncable="YES" codeGenerationType="class">
+        <attribute name="caption" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="copyRight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mediaMetaData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AllMetaData" inverseName="metaDataMedia" inverseEntity="AllMetaData" syncable="YES"/>
+        <relationship name="mediaNews" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AllNews" inverseName="newsMedia" inverseEntity="AllNews" syncable="YES"/>
+    </entity>
+    <entity name="AllMetaData" representedClassName="AllMetaData" syncable="YES" codeGenerationType="class">
+        <attribute name="format" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="metaDataMedia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AllMedia" inverseName="mediaMetaData" inverseEntity="AllMedia" syncable="YES"/>
+    </entity>
+    <entity name="AllNews" representedClassName="AllNews" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishedDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newsMedia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AllMedia" inverseName="mediaNews" inverseEntity="AllMedia" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AllMedia" positionX="24.30078125" positionY="127.19140625" width="128" height="133"/>
+        <element name="AllMetaData" positionX="245.36328125" positionY="-2.76171875" width="128" height="133"/>
+        <element name="AllNews" positionX="-193.4921875" positionY="-32.3984375" width="128" height="148"/>
+    </elements>
+</model>
